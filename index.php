@@ -9,6 +9,6 @@ echo "I like pizza";
     <title>Login-Register Page via PHP</title>
 </head>
 <body>
-    
+    <h1>Hello</h1>
 </body>
 </html>

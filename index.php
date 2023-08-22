@@ -1,6 +1,5 @@
 <?php
 include"dataBaseConnection.php";
-echo "I like sspzza";
 ?>
 <!DOCTYPE html>
 <html lang="en">

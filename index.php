@@ -36,13 +36,29 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $username = filter_input(INPUT_POST,"username", FILTER_SANITIZE_SPECIAL_CHARS);
     $email = filter_input(INPUT_POST,"email", FILTER_SANITIZE_EMAIL);
     $password = filter_input(INPUT_POST,"password", FILTER_SANITIZE_SPECIAL_CHARS);
-    $phone = filter_input(INPUT_POST,"phone", FILTER_SANITIZE_SPECIAL_CHARS);
+    $phone = preg_replace('/[^0-9]/', '', $_POST['phone']);
 
     if(empty($username)|| empty($email)|| empty($password)|| empty($phone)){
-        echo('Please fill in all required fields');
+        echo('Please fill in all required fields <br>');
+        echo('P.S. Your phone number must contain only 10 digits');
     }
+    else{
+        $hash = password_hash($password,PASSWORD_DEFAULT);
+      $sql = "INSERT INTO registeredusers (username,email,password,phone)
+    VALUES('$username','$email','$hash','$phone')";
+try{
+    mysqli_query($conn,$sql);
+    echo "You are now registered!";
+}       
+catch(mysqli_sql_exception){
+    echo "There was an error filling in your details <br>";
+echo "Or they are already used";
+}
+       
 
-};
+
+    }
+}
 
 /*if (filter_var($email, FILTER_VALIDATE_EMAIL))*/
 mysqli_close($conn);

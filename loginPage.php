@@ -2,11 +2,18 @@
 include"dataBaseConnection.php";
 session_start();
 ?>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
 <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
 <h1>Welcome!</h1>
-<h3>Username:</h3>
-<input type="text" name="username">
+<h3>Email:</h3>
+<input type="email" name="email">
 
 <h3>Password:</h3>
 <input type="password" name="password">
@@ -17,13 +24,16 @@ session_start();
 <input type="submit" name="submit" value="Log in">
 </form>
 
+</body>
+</html>
+
 
 <?php 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 
-    $username = filter_input(INPUT_POST,"username", FILTER_SANITIZE_SPECIAL_CHARS);
+    $email = filter_input(INPUT_POST,"email", FILTER_SANITIZE_EMAIL);
     $password = filter_input(INPUT_POST,"password", FILTER_SANITIZE_SPECIAL_CHARS);
-    $sql="SELECT * FROM registeredusers WHERE username = '$username'";
+    $sql="SELECT * FROM registeredusers WHERE email = '$email'";
     try{
          $result =mysqli_query($conn,$sql);
         if(mysqli_num_rows($result)>0){
@@ -32,7 +42,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
              if(password_verify($password,$hashPass)){
                 $_SESSION['id']=$row['id'];
                 echo "<p>Sucssefully log in!</p> <br>
-    <a href='profilePage.php'>Proceed to Profile page</a>";
+    <a href='homePage.php'>Proceed to Profile page</a>";
              } else{
                 throw new Exception();
             }

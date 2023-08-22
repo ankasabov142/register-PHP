@@ -48,11 +48,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     VALUES('$username','$email','$hash','$phone')";
 try{
     mysqli_query($conn,$sql);
-    echo "You are now registered!";
+    echo "<p>You are now registered!</p>";
 }       
 catch(mysqli_sql_exception){
-    echo "There was an error filling in your details <br>";
-echo "Or they are already used";
+    echo "<p>There was an error filling in your details </p> <br>";
+echo "<p>Or they are already used </p>";
 }
        
 

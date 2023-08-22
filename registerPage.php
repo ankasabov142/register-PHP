@@ -11,16 +11,16 @@ include"dataBaseConnection.php";
 <body>
     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
 <h1>Welcome!</h1>
-<p>Username:</p>
+<h3>Username:</h3>
 <input type="text" name="username">
 
-<p>Email:</p>
+<h3>Email:</h3>
 <input type="email" name="email">
 
-<p>Password:</p>
+<h3>Password:</h3>
 <input type="password" name="password">
 
-<p>Phone Number:</p>
+<h3>Phone Number:</h3>
 <input type="text" name="phone">
 <br>
 <br>
@@ -39,8 +39,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $phone = preg_replace('/[^0-9]/', '', $_POST['phone']);
 
     if(empty($username)|| empty($email)|| empty($password)|| empty($phone)){
-        echo('Please fill in all required fields <br>');
-        echo('P.S. Your phone number must contain only 10 digits');
+        echo('<p>Please fill in all required fields </p>');
+        echo('<p>P.S. Your phone number must contain only 10 digits</p>');
     }
     else{
         $hash = password_hash($password,PASSWORD_DEFAULT);
@@ -48,10 +48,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     VALUES('$username','$email','$hash','$phone')";
 try{
     mysqli_query($conn,$sql);
-    echo "<p>You are now registered!</p>";
+    echo "<p>You are now registered!</p> <br>
+    <a href='loginPage.php'>Proceed to Login page</a>";
 }       
 catch(mysqli_sql_exception){
-    echo "<p>There was an error filling in your details </p> <br>";
+    echo "<p>There was an error filling in your details </p>";
 echo "<p>Or they are already used </p>";
 }
        

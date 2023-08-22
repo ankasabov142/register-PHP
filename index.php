@@ -9,7 +9,7 @@ include"dataBaseConnection.php";
     <title>Login-Register Page via PHP</title>
 </head>
 <body>
-    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
+    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
 <h1>Welcome!</h1>
 <p>Username:</p>
 <input type="text" name="username">
@@ -32,5 +32,18 @@ include"dataBaseConnection.php";
 
 
 <?php 
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+    $username = filter_input(INPUT_POST,"username", FILTER_SANITIZE_SPECIAL_CHARS);
+    $email = filter_input(INPUT_POST,"email", FILTER_SANITIZE_EMAIL);
+    $password = filter_input(INPUT_POST,"password", FILTER_SANITIZE_SPECIAL_CHARS);
+    $phone = filter_input(INPUT_POST,"phone", FILTER_SANITIZE_SPECIAL_CHARS);
+
+    if(empty($username)|| empty($email)|| empty($password)|| empty($phone)){
+        echo('Please fill in all required fields');
+    }
+
+};
+
+/*if (filter_var($email, FILTER_VALIDATE_EMAIL))*/
 mysqli_close($conn);
 ?>

@@ -1,5 +1,7 @@
 <?php 
 session_start();
+include"dataBaseConnection.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,12 +11,30 @@ session_start();
     <title>Document</title>
 </head>
 <body>
-    hiii
+    
 </body>
 </html>
 
 <?php 
-echo $_SESSION["id"];
+$currUserId=$_SESSION["id"];
 
+try{
+$sql="SELECT * FROM registeredusers WHERE id = '$currUserId'";
+         $result =mysqli_query($conn,$sql);
+            $row =mysqli_fetch_assoc($result);
+            $username=$row['username'];
+            $email=$row['email'];
+            $password=$row['password'];
+            $phone=$row['phone'];
+                
+    
+    }
+    catch (Exception ) {
+        echo "Wrong password or username";
+    }
+
+
+
+mysqli_close($conn);
 
 ?>

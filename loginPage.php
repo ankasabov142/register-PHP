@@ -18,6 +18,28 @@ include"dataBaseConnection.php";
 
 
 <?php 
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+
+    $username = filter_input(INPUT_POST,"username", FILTER_SANITIZE_SPECIAL_CHARS);
+    $password = filter_input(INPUT_POST,"password", FILTER_SANITIZE_SPECIAL_CHARS);
+    $sql="SELECT * FROM registeredusers WHERE username = '$username'";
+    try{
+         $result =mysqli_query($conn,$sql);
+        if(mysqli_num_rows($result)>0){
+            $row =mysqli_fetch_assoc($result);
+             $hashPass =$row['password'];
+             if(password_verify($password,$hashPass)){
+                echo 'Sucssefully log in';
+             } else{
+                throw new Exception();
+            }
+    }
+}
+    catch (Exception ) {
+        echo "Wrong shit bro";
+    }
+
+}
 // if($_SERVER["REQUEST_METHOD"]=="POST"){
 //     $username = filter_input(INPUT_POST,"username", FILTER_SANITIZE_SPECIAL_CHARS);
 //     $email = filter_input(INPUT_POST,"email", FILTER_SANITIZE_EMAIL);

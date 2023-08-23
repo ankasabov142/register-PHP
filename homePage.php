@@ -10,9 +10,13 @@ include"dataBaseConnection.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500&family=Caprasimo&family=Kanit:ital,wght@0,600;1,300&family=Lilita+One&family=Open+Sans&family=Questrial&family=REM&family=Work+Sans:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-<form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
+<form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post" class="form">
 
 <input type="submit" name="edit" value="Edit Profile">
 <input type="submit" name="logout" value="Log out">

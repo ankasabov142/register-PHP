@@ -10,10 +10,14 @@ $currUserId=$_SESSION["id"];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500&family=Caprasimo&family=Kanit:ital,wght@0,600;1,300&family=Lilita+One&family=Open+Sans&family=Questrial&family=REM&family=Work+Sans:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
     
-<form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
+<form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post" class="form">
 <h1>Welcome!</h1>
 <h3>Username:</h3>
 <input type="text" name="username">

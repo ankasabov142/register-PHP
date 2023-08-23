@@ -10,7 +10,7 @@
   color: white;
   transform: translate(-50%, -50%);
   font-size: 20px;
-  border: 2px solid black;
+  border: 7px solid #A9A9A9;
   border-radius: 10%;
 }
 
@@ -22,4 +22,13 @@ body {
     rgba(70, 12, 102, 1) 50%,
     rgba(104, 2, 110, 1) 78%
   );
+
+  font-family: 'Bodoni Moda', serif;
+font-family: 'Caprasimo', cursive;
+font-family: 'Kanit', sans-serif;
+font-family: 'Lilita One', cursive;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Questrial', sans-serif;
+font-family: 'REM', sans-serif;
+font-family: 'Work Sans', sans-serif;
 }

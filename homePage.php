@@ -16,7 +16,7 @@ include"dataBaseConnection.php";
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500&family=Caprasimo&family=Kanit:ital,wght@0,600;1,300&family=Lilita+One&family=Open+Sans&family=Questrial&family=REM&family=Work+Sans:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-<form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post" class="form">
+<form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post" class="formHome">
 
 <input type="submit" name="edit" value="Edit Profile">
 <input type="submit" name="logout" value="Log out">
@@ -42,7 +42,7 @@ $sql="SELECT * FROM registeredusers WHERE id = '$currUserId'";
          $result =mysqli_query($conn,$sql);
             $row =mysqli_fetch_assoc($result);
             $username=$row['username'];
-            echo "<h1>Welcome, $username! </h1> ";
+            echo "<h1 class=\"homePageWelcome\">Welcome, $username ! </h1> ";
     
     }
     catch (Exception ) {

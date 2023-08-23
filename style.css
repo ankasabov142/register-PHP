@@ -1,0 +1,25 @@
+.form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding-left: 120px;
+  padding-right: 120px;
+  padding-bottom: 60px;
+  padding-top: 60px;
+  align-items: center;
+  color: white;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 10%;
+}
+
+body {
+  background: rgb(87, 14, 152);
+  background: linear-gradient(
+    161deg,
+    rgba(87, 14, 152, 1) 18%,
+    rgba(70, 12, 102, 1) 50%,
+    rgba(104, 2, 110, 1) 78%
+  );
+}

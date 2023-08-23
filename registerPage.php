@@ -6,10 +6,11 @@ include"dataBaseConnection.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Register Page</title>
 </head>
 <body>
-    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
+    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post" class="form">
 <h1>Welcome!</h1>
 <h3>Username:</h3>
 <input type="text" name="username">

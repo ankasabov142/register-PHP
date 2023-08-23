@@ -1,1 +1,1 @@
-Hi1!
+Exercise written in PHP. Training on user authentication, password hashing, form validation, and security considerations in web development.

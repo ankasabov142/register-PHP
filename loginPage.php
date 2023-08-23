@@ -45,15 +45,15 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
              $hashPass =$row['password'];
              if(password_verify($password,$hashPass)){
                 $_SESSION['id']=$row['id'];
-                echo "<p>Sucssefully log in!</p> <br>
-    <a href='homePage.php'>Proceed to Profile page</a>";
+                echo "<p class=\"loginPageSucces\">Sucssefully log in!</p> <br>
+    <a href='homePage.php' class=\"loginPageSuccesAnchor\">Proceed to Profile page</a>";
              } else{
                 throw new Exception();
             }
     }
 }
     catch (Exception ) {
-        echo "Wrong password or username";
+        echo "<p class=\"loginPageError\"> Wrong password or username</p>";
     }
 
 }

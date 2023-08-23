@@ -56,8 +56,8 @@ try{
     <a href='loginPage.php' class=\"registerPageSuccessAnchor\" >Proceed to Login page</a>";
 }       
 catch(mysqli_sql_exception){
-    echo "<p class=\"registerPageSuccessError\">There was an error filling in your details </p>";
-echo "<p class=\"registerPageSuccessErrorVol2\">Or they are already used </p>";
+    echo "<p class=\"registerPageError\">There was an error filling in your details </p>";
+echo "<p class=\"registerPageErrorVol2\">Or they are already used </p>";
 }
        
 

@@ -18,8 +18,8 @@ include"dataBaseConnection.php";
 <body>
 <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post" class="formHome">
 
-<input type="submit" name="edit" value="Edit Profile">
-<input type="submit" name="logout" value="Log out">
+<input type="submit" name="edit" value="Edit Profile" class="button">
+<input type="submit" name="logout" value="Log out" class="button">
 </form>
 
 </body>

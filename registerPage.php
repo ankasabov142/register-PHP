@@ -29,7 +29,7 @@ include"dataBaseConnection.php";
 <br>
 <br>
 
-<input type="submit" name="submit" value="Register now">
+<input type="submit" name="submit" value="Register now" class="button">
 </form>
 </body>
 </html>

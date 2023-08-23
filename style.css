@@ -130,7 +130,7 @@ font-family: 'Work Sans', sans-serif;
   transform: translate(-50%, -50%);
   font-size: 20px;
   border: 7px solid #A9A9A9;
-  border-radius: 20%; 
+  border-radius: 30%; 
 }
 
 .homePageWelcome{
@@ -140,5 +140,29 @@ font-family: 'Work Sans', sans-serif;
     font-size: 35px;
     top: 25%;
     left: 50%;
+    transform: translateX(-50%);
+}
+
+.button{
+    font-size: 28px;
+    padding: 20px;
+    border: 3px solid black;
+    border-radius: 20px;
+    background-color: transparent;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+}
+
+.editPageFormModule{
+   margin-left: 150px;
+}
+
+.editPageH1{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    padding-left: 80px;
+    width: 500px;
     transform: translateX(-50%);
 }

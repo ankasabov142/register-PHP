@@ -25,7 +25,7 @@ session_start();
 <br>
 <br>
 
-<input type="submit" name="submit" value="Log in">
+<input type="submit" name="submit" value="Log in" class="button">
 </form>
 
 </body>

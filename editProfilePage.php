@@ -18,23 +18,23 @@ $currUserId=$_SESSION["id"];
 <body>
     
 <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post" class="form">
-<h1>Welcome!</h1>
-<h3>Username:</h3>
-<input type="text" name="username">
+<h1 class="editPageH1">Welcome! Let's edit!</h1>
+<h3 class="editPageFormModule">Username:</h3>
+<input type="text" name="username" class="editPageFormModule">
 
-<h3>Email:</h3>
-<input type="email" name="email">
+<h3 class="editPageFormModule">Email:</h3>
+<input type="email" name="email" class="editPageFormModule">
 
-<h3>Password:</h3>
-<input type="password" name="password">
+<h3 class="editPageFormModule">Password:</h3>
+<input type="password" name="password" class="editPageFormModule">
 
-<h3>Phone Number:</h3>
-<input type="text" name="phone">
+<h3 class="editPageFormModule">Phone Number:</h3>
+<input type="text" name="phone" class="editPageFormModule">
 <br>
 <br>
 
-<input type="submit" name="submit" value="Finish Editing">
-<input type="submit" name="back" value="Back to Home page">
+<input type="submit" name="submit" value="Finish Editing" class="button">
+<input type="submit" name="back" value="Back to Home page" class="button">
 
 </form>
 

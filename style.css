@@ -32,3 +32,58 @@ font-family: 'Questrial', sans-serif;
 font-family: 'REM', sans-serif;
 font-family: 'Work Sans', sans-serif;
 }
+
+.registerPageFailedEchoFill{
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    font-size: 20px;
+    top: 40%;
+    left: 65%;
+}
+.registerPageFailedEchoPs{
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    font-size: 20px;
+    top: 44%;
+    left: 65%;
+}
+
+.registerPageSuccess{
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    font-size: 23px;
+    top: 40%;
+    left: 65%;
+}
+.registerPageSuccessAnchor{
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    font-size: 23px;
+    color: black;
+    text-decoration: none;
+    top: 48%;
+    left: 65%;
+}
+.registerPageSuccessError{
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    font-size: 23px;
+    top: 40%;
+    left: 65%;
+}
+
+.registerPageSuccessErrorVol2{
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    font-size: 23px;
+    color: black;
+    text-decoration: none;
+    top: 45%;
+    left: 65%;
+}

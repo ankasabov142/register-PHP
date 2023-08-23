@@ -43,8 +43,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $phone = preg_replace('/[^0-9]/', '', $_POST['phone']);
 
     if(empty($username)|| empty($email)|| empty($password)|| empty($phone)){
-        echo('<p>Please fill in all required fields </p>');
-        echo('<p>P.S. Your phone number must contain only 10 digits</p>');
+        echo('<p class= \"registerPageFailedEchoFill\">Please fill in all required fields </p>');
+        echo('<p class= \"registerPageFailedEchoPs\">P.S. Your phone number must contain only 10 digits</p>');
     }
     else{
         $hash = password_hash($password,PASSWORD_DEFAULT);
@@ -52,12 +52,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     VALUES('$username','$email','$hash','$phone')";
 try{
     mysqli_query($conn,$sql);
-    echo "<p>You are now registered!</p> <br>
-    <a href='loginPage.php'>Proceed to Login page</a>";
+    echo "<p class=\"registerPageSuccess\">You are now registered!</p> <br>
+    <a href='loginPage.php' class=\"registerPageSuccessAnchor\" >Proceed to Login page</a>";
 }       
 catch(mysqli_sql_exception){
-    echo "<p>There was an error filling in your details </p>";
-echo "<p>Or they are already used </p>";
+    echo "<p class=\"registerPageSuccessError\">There was an error filling in your details </p>";
+echo "<p class=\"registerPageSuccessErrorVol2\">Or they are already used </p>";
 }
        
 
